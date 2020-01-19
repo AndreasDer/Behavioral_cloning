@@ -96,27 +96,19 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
 
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-cropping2d_1 (Cropping2D)    (None, 80, 320, 3)        0         
-_________________________________________________________________
-lambda_1 (Lambda)            (None, 80, 320, 3)        0         
-_________________________________________________________________
-conv2d_1 (Conv2D)            (None, 38, 158, 24)       1824      
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 38, 158, 24)       0         
-_________________________________________________________________
-conv2d_2 (Conv2D)            (None, 17, 77, 36)        21636     
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 47124)             0         
-_________________________________________________________________
-dense_1 (Dense)              (None, 120)               5655000   
-_________________________________________________________________
-dense_2 (Dense)              (None, 10)                1210      
-_________________________________________________________________
-dense_3 (Dense)              (None, 1)                 11        
-=================================================================
+
+|Layer (type)      |           Output Shape      |        Param # |  
+|:-----------------|:----------------------------|:---------------|
+|cropping2d_1 (Cropping2D) |   (None, 80, 320, 3)    |    0       |  
+|lambda_1 (Lambda)         |   (None, 80, 320, 3)    |    0       |
+|conv2d_1 (Conv2D)         |   (None, 38, 158, 24)   |    1824    | 
+|dropout_1 (Dropout)       |   (None, 38, 158, 24)   |    0       |  
+|conv2d_2 (Conv2D)         |   (None, 17, 77, 36)    |    21636   |  
+|flatten_1 (Flatten)       |   (None, 47124)         |    0       |  
+|dense_1 (Dense)           |   (None, 120)           |    5655000 |  
+|dense_2 (Dense)           |   (None, 10)            |    1210    |  
+|dense_3 (Dense)           |   (None, 1)             |    11      |  
+
 Total params: 5,679,681
 Trainable params: 5,679,681
 Non-trainable params: 0
