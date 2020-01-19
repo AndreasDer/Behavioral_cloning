@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
+[image1]: ./examples/network_visualization.svg "Model Visualization"
 [image2]: ./examples/placeholder.png "Grayscaling"
 [image3]: ./examples/placeholder_small.png "Recovery Image"
 [image4]: ./examples/placeholder_small.png "Recovery Image"
@@ -95,6 +95,31 @@ At the end of the process, the vehicle is able to drive autonomously around the 
 #### 2. Final Model Architecture
 
 The final model architecture (model.py lines 18-24) consisted of a convolution neural network with the following layers and layer sizes ...
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+cropping2d_1 (Cropping2D)    (None, 80, 320, 3)        0         
+_________________________________________________________________
+lambda_1 (Lambda)            (None, 80, 320, 3)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 38, 158, 24)       1824      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 38, 158, 24)       0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 17, 77, 36)        21636     
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 47124)             0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 120)               5655000   
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                1210      
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 11        
+=================================================================
+Total params: 5,679,681
+Trainable params: 5,679,681
+Non-trainable params: 0
 
 Here is a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric)
 
