@@ -141,7 +141,7 @@ model.compile(loss='mse',optimizer='adam')
 #model.fit(X_train,y_train, validation_split=0.2,shuffle=True,nb_epoch=2)
 history_object =model.fit_generator(train_generator, steps_per_epoch=ceil(len(train_samples)/batch_size), validation_data=validation_generator,validation_steps=ceil(len(validation_samples)/batch_size),epochs=10, verbose=2)
 
-model.save('retrained_model_working.h5')
+model.save('model.h5')
 
 # Uncomment to print the validation and training loss
 #print_validation_loss(history_object,"validation_loss_working.png")
